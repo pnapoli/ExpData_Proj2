@@ -1,9 +1,7 @@
 # --------------------------------------------------------
-# Setting working directory and font
+# Setting working directory 
 # --------------------------------------------------------
 setwd("/Users/pnapoli/Documents/DataScience/ExpDataAnalysis")
-library(extrafont)
-loadfonts()
 
 # --------------------------------------------------------
 # Reading the data from files
@@ -22,6 +20,6 @@ if(!exists("SCC")){
 # --------------------------------------------------------
 TotalByYear <- aggregate(Emissions ~ year, NEI, sum)
 
-png(filename='plot1.png', family="Garamond", size=14)
+png('plot1.png')
 barplot(height=TotalByYear$Emissions, names.arg=TotalByYear$year, xlab="years", ylab=expression('total PM'[2.5]*' emission'),main=expression('Total PM'[2.5]*' emissions at various years'))
 dev.off()
