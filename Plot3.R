@@ -20,10 +20,10 @@ if(!exists("SCC")){
 # --------------------------------------------------------
 Baltimore <- NEI[NEI$fips=="24510", ]
 
-TotalByYear&Type <- aggregate(Emissions ~ year + type, Baltimore, sum)
+TotalByYearAndType <- aggregate(Emissions ~ year + type, Baltimore, sum)
 
 png('plot3.png', width=640, height=480)
-graf <- ggplot(TotalByYear&Type, aes(year, Emissions, color = type))
+graf <- ggplot(TotalByYearAndType, aes(year, Emissions, color = type))
 graf <- graf + geom_line() +
   xlab("year") +
   ylab(expression('Total PM'[2.5]*" Emissions")) +
