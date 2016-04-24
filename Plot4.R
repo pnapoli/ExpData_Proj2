@@ -29,10 +29,10 @@ if(!exists("NEIplusSCC")){
 coalMatches  <- grepl("coal", NEIplusSCC$Short.Name, ignore.case=TRUE)
 subsetNEIplusSCC <- NEIplusSCC[coalMatches, ]
 
-TotalByYearAndType <- aggregate(Emissions ~ year,  subsetNEIplusSCC, sum)
+TotalByYear <- aggregate(Emissions ~ year,  subsetNEIplusSCC, sum)
 
 png("plot4.png", width=640, height=480)
-graf <- ggplot(aggregatedTotalByYear, aes(factor(year), Emissions))
+graf <- ggplot(TotalByYear, aes(factor(year), Emissions))
 graf <- graf + geom_bar(stat="identity") +
   xlab("year") +
   ylab(expression('Total PM'[2.5]*" Emissions")) +
