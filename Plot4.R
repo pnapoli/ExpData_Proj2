@@ -18,6 +18,7 @@ if(!exists("SCC")){
 # --------------------------------------------------------
 if(!exists("NEIplusSCC")){
   NEIplusSCC <- merge(NEI, SCC, by="SCC")
+}
 
 # --------------------------------------------------------
 # Plot4 - Answering the question: Across the United States, how have emissions from coal combustion-related sources changed from 1999-2008?
